@@ -108,8 +108,12 @@ function verificaColisaoRaquete(x,y){ colidiu = collideRectCircle(x,y,raqueteCom
 }
 
 function movimentaRaqueteOponente(){
-  velocidadeYOponente = yBolinha - yRaqueteOponente - raqueteComprimento /2 -30;
-  yRaqueteOponente += velocidadeYOponente
+  if (keyIsDown(87)){
+    yRaqueteOponente -= 10;
+  }
+  if (keyIsDown(83)){
+    yRaqueteOponente += 10;
+  }
 }
 
 function incluiPlacar(){
